@@ -1,0 +1,63 @@
+cabal-version: 1.12
+
+name:           hw3
+version:        0.1.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      HW3.Action
+      HW3.Base
+      HW3.Class
+      HW3.Evaluator
+      HW3.HaskelineCompletion
+      HW3.OptionsParser
+      HW3.Parser
+      HW3.Pretty
+      HW3.TH
+  other-modules:
+      Paths_hw3
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+    , bytestring
+    , containers
+    , directory
+    , haskeline
+    , lens
+    , megaparsec
+    , mtl
+    , optparse-applicative
+    , parser-combinators
+    , prettyprinter
+    , prettyprinter-ansi-terminal
+    , random
+    , scientific
+    , serialise
+    , template-haskell
+    , text
+    , time
+    , transformers
+    , zlib
+  default-language: Haskell2010
+
+executable hi
+  main-is: Main.hs
+  other-modules:
+      Paths_hw3
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base
+    , containers
+    , haskeline
+    , hw3
+    , megaparsec
+    , optparse-applicative
+    , prettyprinter
+    , prettyprinter-ansi-terminal
+    , text
+    , transformers
+  default-language: Haskell2010
